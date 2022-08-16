@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<title>DICOM APP</title>
+
+{% block title %}
+腫瘤辨識
+{% endblock %}
+
+{% block content %}
+<body>
+    <form method="POST" enctype="multipart/form-data" action="{{ url_for('FetchImage') }}">
+        <input type="file"  name="inputImage" multiple='multiple'>
+        <button type="submit">Upload</button>
+      </form>
+
+
+    {% if CHECK == True %}
+    {% for i , j in str %}
+    <p1>Before</p1>
+    
+    <img src={{ j  }}>
+    <p1>After</p1>
+    
+    <img src={{ i }}>
+    {% endfor %}
+
+    {% endif %}
+</body>
+{% endblock %}
+
+</html>
